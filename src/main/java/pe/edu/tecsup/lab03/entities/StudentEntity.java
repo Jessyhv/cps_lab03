@@ -6,6 +6,7 @@ public class StudentEntity {
     private String name;
     private String lastName;
     private String email;
+    private String career;
 
     public StudentEntity() {
     }
@@ -15,6 +16,14 @@ public class StudentEntity {
         this.name = name;
         this.lastName = lastName;
         this.email = email;
+    }
+
+    public StudentEntity(int id, String name, String lastName, String email, String career) {
+        this.id = id;
+        this.name = name;
+        this.lastName = lastName;
+        this.email = email;
+        this.career = career;
     }
 
     public int getId() {
@@ -49,6 +58,14 @@ public class StudentEntity {
         this.email = email;
     }
 
+    public String getCareer() {
+        return career;
+    }
+
+    public void setCareer(String career) {
+        this.career = career;
+    }
+
     @Override
     public String toString() {
         return "StudentEntity{" +
@@ -56,6 +73,7 @@ public class StudentEntity {
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
+                ", career='" + career + '\'' +
                 '}';
     }
 }
