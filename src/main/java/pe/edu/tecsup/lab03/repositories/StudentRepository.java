@@ -24,4 +24,20 @@ public class StudentRepository {
                 .findFirst()
                 .orElse(null);
     }
+
+    public StudentEntity update(StudentEntity student) {
+        StudentEntity existing = findById(student.getId());
+        if (existing == null) {
+            return null;
+        }
+        existing.setName(student.getName());
+        existing.setLastName(student.getLastName());
+        existing.setEmail(student.getEmail());
+        existing.setCareer(student.getCareer());
+        return existing;
+    }
+
+    public boolean deleteById(int id) {
+        return students.removeIf(student -> student.getId() == id);
+    }
 }

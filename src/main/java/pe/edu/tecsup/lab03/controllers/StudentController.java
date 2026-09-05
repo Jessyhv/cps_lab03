@@ -20,4 +20,12 @@ public class StudentController {
     public StudentEntity getStudent(int id) {
         return studentService.getStudentById(id);
     }
+
+    public StudentEntity updateStudent(StudentEntity student) {
+        return studentService.updateStudent(student);
+    }
+
+    public boolean deleteStudent(int id) {
+        return studentService.deleteStudent(id);
+    }
 }
